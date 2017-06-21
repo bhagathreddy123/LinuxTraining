@@ -693,6 +693,106 @@ apg.conf
 .....
 etc
 
+grep,egrep,fgrep:
+
+fgrep matches patterns in a file. It doesn’t support regex. Instead it uses direct string matching.
+
+egrep works in a similar way, but uses extended regular expression to match patterns.
+
+grep is a combination of both.If you do not specify either -E or -F, (or their long form equivalents, --extended-regexp or --fixed-strings), grep behaves like egrep, but matches basic regular expressions instead of extended ones.
+
+grep stands for  "Global Regular Expressions Print". The grep is a program that scans a file or group of files line by line and returns the output as the matched pattern. A pattern is an expression that specifies a set of strings which is meta characters.
+
+the syntax for grep is
+
+grep [OPTIONS] PATTERN [FILE...]
+
+egrep
+
+The acronym of egrep stands for  "Extended Global Regular Expressions Print".
+
+egrep treats the given pattern as Regular expression
+
+egrep is same as grep -E
+
+fgrep
+
+fgrep is same as grep -F  
+fgrep stands for Fixed-string Global Regular Expressions Print
+
+In fgrep the search will complete faster because it only processes a simple string rather than a complex pattern.
+
+pgrep
+
+pgrep stands for "Process-ID Global Regular Expressions Print".
+pgrep is handy when you want to know is the process id integer of a process.
+for example if we want to a process id of a process in order to kill that process first we need to find the process id
+ ps -aux | grep process name
+
+here by using pgrep we can directly get the pid of a process
+
+gerp Search a Pa tern from current directory.
+
+egrep (grep -E in linux) is extended grep where additional regular expression metacharacters have been added like +, ?, | and ().
+
+fgrep (grep -F in linux) is fixed or fast grep and behaves as grep but does not recognise any regular expression metacharacters as being special.
+
+
+
+$ grep hello testfirst
+
+$ cat testfirst | grep hello
+hello
+hello w
+hello world
+hello sir
+friend hello
+
+$ grep ^hello testfirst
+hello
+hello w
+hello world
+hello sir
+
+$ grep [e] testfirst
+hello
+hello w
+hello world
+hello sir
+friend hello
+helraj
+
+$ grep [w] testfirst
+two
+hello w
+hello world
+$ grep [hpow] testfirst
+two
+ioslfsf
+hello
+hello w
+hello world
+hello sir
+friend hello
+helraj
+
+$ grep ^[hpow] testfirst
+hello
+hello w
+hello world
+hello sir
+helraj
+
+$ grep ^[a-f] testfirst
+ffaffadff
+aff
+friend hello
+
+$ egrep -i 'hello|world' testfirst
+$ egrep '^hello|world' testfirst
+$ egrep -i 'hello. *world' testfirst
+
+$ egrep 'hello' testfirst
 
 tee command is used for read for standard input and write for standard out put
 
