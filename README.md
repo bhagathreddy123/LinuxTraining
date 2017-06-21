@@ -596,3 +596,104 @@ $ ls
 README.md  testfirst
 
 the above command is very useful when Changing permissions Changing ownerships Removing empty files.
+
+Streams:
+
+Streams is basically nothing but what is displaying on Linux terminal screen
+
+standard input
+standard output
+standard error
+
+ex:
+$ ls
+astil1  astil2  README.md  testfirst
+$ ls dlsfjoioifaog
+ls: cannot access 'dlsfjoioifaog': No such file or directory
+
+standard input is whatever input we type in the  terminal(command line)
+
+$ echo "tester"
+tester
+
+$ echo "tester" > testtexst
+$ ls
+astil1  astil2  newfile  README.md  testfirst  testtexst
+$ cat testtexst
+tester
+
+
+$ echo "testing file" > filename
+$ cat filename
+testing file
+$ echo "my new entry" > filename
+$ cat filename
+my new entry
+$ echo "my new entry" >> filename
+$ echo "my new entry" >> filename
+$ echo "my new entry" >> filename
+$ cat filename
+my new entry
+my new entry
+my new entry
+my new entry
+$ echo "my  entry" > filename
+$ cat filename
+my  entry
+
+Standard Input
+The standard input stream typically carries data from a user to a program. Programs that expect standard input usually receive input from a device, such as a keyboard. Standard input is terminated by reaching EOF (end-of-file). As described by its name, EOF indicates that there is no more data to be read.
+To see standard input in action, run the cat program. Cat stands for concatenate, which means to link or combine something. It is commonly used to combine the contents of two files. When run on its own, cat opens a looping prompt.
+
+
+After opening cat, type a series of numbers as it is running.
+$ cat
+1
+1
+2
+2
+ctrl d
+
+$ echo Sent to the terminal through standard output
+Sent to the terminal through standard output
+$ echo
+
+Pipes:
+
+$ ls /etc | grep cron
+anacrontab
+cron.d
+cron.daily
+cron.hourly
+cron.monthly
+crontab
+cron.weekly
+
+$ ls /etc | grep cron | grep cron.daily
+cron.daily
+
+$ ls /etc | grep cron | grep cron.daily > grep.txt
+$ cat grep.txt
+cron.daily
+
+for displating in sorted order
+$ ls /etc | sort -f
+
+$ ls /etc | sort -f > sorted.txt
+
+$ cat sorted.txt
+
+acpi
+adduser.conf
+alternatives
+anacrontab
+apache2
+apg.conf
+.....
+.....
+etc
+
+
+tee command is used for read for standard input and write for standard out put
+
+$ tee
